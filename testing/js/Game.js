@@ -113,35 +113,35 @@ class Game {
     const preloader = new Preloader(options);
   }
 
-  toggleSound() {
-    this.mute = !this.mute;
-    const btn = document.getElementById('sfx-btn');
+//  toggleSound() {
+//    this.mute = !this.mute;
+//    const btn = document.getElementById('sfx-btn');
 
-    if (this.mute) {
-      for (const prop in this.sfx) {
-        const sfx = this.sfx[prop];
-        if (sfx instanceof SFX) sfx.stop();
-      }
-      btn.innerHTML = '<i class="fas fa-volume-off"></i>';
-    } else {
-      this.sfx['i-choose-you'].play();
-      btn.innerHTML = '<i class="fas fa-volume-up"></i>';
-    }
-  }
+//    if (this.mute) {
+//      for (const prop in this.sfx) {
+//        const sfx = this.sfx[prop];
+//        if (sfx instanceof SFX) sfx.stop();
+//      }
+//      btn.innerHTML = '<i class="fas fa-volume-off"></i>';
+//    } else {
+//      this.sfx['i-choose-you'].play();
+//      btn.innerHTML = '<i class="fas fa-volume-up"></i>';
+//    }
+//  }
 
-  initSfx() {
-    this.sfx = {};
-    this.sfx.context = new (window.AudioContext || window.webkitAudioContext)();
-    const list = ['i-choose-you'];
-    const game = this;
-    list.forEach((item) => {
-      game.sfx[item] = new SFX({
-        context: game.sfx.context,
-        src: { mp3: `${game.assetsPath}sfx/${item}.mp3`, ogg: `${game.assetsPath}sfx/${item}.ogg` },
-        volume: 0.3,
-      });
-    });
-  }
+//  initSfx() {
+//    this.sfx = {};
+//    this.sfx.context = new (window.AudioContext || window.webkitAudioContext)();
+//    const list = ['i-choose-you'];
+//    const game = this;
+//    list.forEach((item) => {
+//      game.sfx[item] = new SFX({
+//        context: game.sfx.context,
+//        src: { mp3: `${game.assetsPath}sfx/${item}.mp3`, ogg: `${game.assetsPath}sfx/${item}.ogg` },
+//        volume: 0.3,
+//      });
+//    });
+//  }
 
 
   init() {
